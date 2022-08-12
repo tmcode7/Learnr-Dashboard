@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Dashboard</title>
+    <style type="text/tailwindcss">
+       
+    </style>
+
+</head>
+<body>
+    <div class="container mx-auto">
+        <div class="flex flex-row pl-4">
+            <div class="basis-1/4">
+                <div class="heading">
+                    <h1 class="font-extrabold text-3xl text-blue-600 py-10">Learnr</h1>
+                </div>
+
+                <div class="list-group divide-y divide-dashed bg-slate-100 px-3 py-4">
+                    <div class="flex flex-row py-4 border rounded-lg bg-blue-100">
+                        <div class="basis-1/4 justify-between px-2">
+                            <img src="icons8-menu-32.png">
+                        </div>
+                        <div class="basis-1/2">
+                            <p>Overview</p>
+                        </div>
+                        <p id="notifications" class="hidden bg-red-600 border-0 rounded-full text-xs px-1"></p>
+                    </div>
+
+                    <div class="flex flex-row py-4">
+                        <div class="basis-1/4 justify-between px-2">
+                            <img src="icons8-test-passed-32.png" alt="icon">
+                        </div>
+                        <div class="basis-1/2">
+                            <p>Assignments</p>
+                        </div>
+                        <div id="notifications" class="hidden bg-red-600 border-0 rounded-full text-xs px-1"></div>
+                    </div>
+                    
+                    <div class="flex flex-row py-4">
+                        <div class="basis-1/4 justify-between px-2">
+                            <img src="icons8-toolbox-32.png" alt="icon">
+                        </div>
+                        <div class="basis-1/2">
+                            <p>Reports</p>
+                        </div>
+                        <div id="notifications" class="hidden bg-red-600 border-0 rounded-full text-xs px-1"></div>
+                    </div>
+
+                    <div class="flex flex-row py-4">
+                        <div class="basis-1/4 justify-between px-2">
+                            <img src="icons8-chat-bubble-32.png" alt="icon">
+                        </div>
+                        <div class="basis-1/2">
+                            <p>Messages</p>
+                        </div>
+                        <div id="notifications" >
+                            <p class="bg-red-600 border-0 rounded-full h-4 w-4 text-xs px-1">9</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row py-4">
+                        <div class="basis-1/4 justify-between px-2">
+                            <img src="icons8-gear-32.png">
+                        </div>
+                        <div class="basis-1/2">
+                            <p>Settings</p>
+                        </div>
+                        <div id="notifications" class="hidden bg-red-600 border-0 rounded-full text-xs px-1"></div>
+                    </div>
+
+            </div>
+          
+        </div>
+
+        <div id="main-area" class="basis-1/2 py-10 px-3">
+            <div id="dash-header">
+                <div class="flex flex-row justify-between">
+                    <div class=" pl-4">
+                        <h2 class="font-bold text-xl">Hi, Student</h2>
+                        <p>Welcome to your dashboard.</p>
+                    </div>
+                    <div class="">
+                        <div class="search">
+                            <form action="#">
+                                <input class="border border-solid text-sm" type="text"
+                                    placeholder=" Search for anything..."
+                                    name="search">
+                                <button>
+                                    <img src="icons8-search-16.png">
+                                </button>
+                               
+                            </form>
+                        </div>
+                        <img src="" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div id="open-courses" class="flex flex-row">
+               
+                <div onclick="navToCourse1()"  id="course-slot-1" class="basis-1/3 cursor-pointer">
+                    <div class="mb-10px mt-2 p-4">
+                        <div class="container rounded-lg shadow-lg p-4 bg-blue-400">
+                            <img class="w-12 h-12 bg-contain rounded-full p-2 border border-solid bg-white" src="icons8-code-32.png">
+                            <blockquote class="px-0 py-6">
+                                <h3 class="text-md font-bold mb-4">Basic: HTML & CSS</h3>
+                                <p class="text-sm">Last Opened:<span id="last-seen" class="italic"> 2hrs ago</span></p>
+                            </blockquote>
+        
+                        </div>
+                    </div>
+                </div>
+
+                <div id="course-slot-2" class="basis-1/3">
+                    <div class="mb-10px mt-2 p-4">
+                        <div class="container rounded-lg shadow-lg p-4 bg-blue-300">
+                            <img class="w-12 h-12 bg-contain rounded-full p-2 border border-solid bg-white" src="icons8-design-32.png">
+                            <blockquote class="px-0 py-6">
+                                <h3 class="text-md font-bold mb-4">Basic: Graphic Design</h3>
+                                
+                                <p class="text-sm">Last Opened:<span id="last-seen" class="italic"> 1w ago</span></p>
+                            </blockquote>
+        
+                        </div>
+                    </div>
+                </div>
+
+                <div id="course-slot-3" class="basis-1/3">
+                    <div class="mb-10px mt-2 p-4">
+                        <div class="container rounded-lg shadow-lg p-4 bg-blue-200">
+                            <img class="w-12 h-12 bg-contain rounded-full p-2 border border-solid bg-white" src="icons8-camera-32.png">
+                            <blockquote class="px-0 py-6">
+                                <h3 class="text-md font-bold mb-4">Basic: Photography</h3>
+                            
+                                <p class="text-sm">Last Opened:<span id="last-seen" class="italic"> 2w ago</span></p>
+                            </blockquote>
+        
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="right-end" class="basis-1/4 flex flex-col py-10  bg-slate-100 px-3">
+            <div class="heading flex flex-row justify-between items-center">
+                <div class="">
+                    <h2 class="font-bold text-xl  text-blue-600 py-10">Profile</h2>
+                </div>
+                <div id="edit profile" class="">
+                    <img src="icons8-edit-32.png" class="border rounded-lg border-black p-2" alt="icon">
+                </div>
+            </div>
+
+            <div id="profile-display" class="">
+                <div id="profile-pic" class="flex items-center justify-center">
+                    <img class="border border-black border-solid h-22 w-22 rounded-full p-1" src="icons8-user-male-skin-type-4-80.png" alt="profile picture">
+                </div>
+
+                <div id="profile-name-info" class="flex flex-col items-center justify-center">
+                    <h3 id="name" class="font-bold">Student 01</h3>
+                    <p id="student description" class="text-xs font-thin">College Student</p>
+                </div>
+            </div>
+
+        </div>
+
+      
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
