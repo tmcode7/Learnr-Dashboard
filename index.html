@@ -8,8 +8,13 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Dashboard</title>
     <style type="text/tailwindcss">
-
     </style>
+
+    <style>
+        
+    </style>
+
+    
 
 </head>
 
@@ -170,7 +175,7 @@
                 <div id="upcoming-classes" class="flex">
                 
                     <div class="mb-10px mt-2 p-4 basis-7/12">
-                        <h3 class="font-bold text-sm">Upcoming Classes</h3>
+                        <h3 class="font-bold text-sm mb-2">Upcoming Classes</h3>
                         <div class="container rounded-lg shadow-lg p-4 bg-blue-300">
                             <div class="list-group divide-y divide-dashed px-3 py-4">
                                 <div class="flex flex-row py-4">
@@ -205,32 +210,36 @@
                     </div>
 
                     <div class="mb-10px mt-2 p-4 basis-5/12">
-                        <h3 class="font-bold text-sm">Course Leaderboard</h3>
-                        <div class="container rounded-lg shadow-lg p-4 bg-blue-300">
-                            <table class="table-fixed border-separate border-spacing-2">
-                                <thead class="flex">
-                                  <tr >
-                                    <th class="border-b-2 border-white border-solid text-sm">RANK</th>
-                                    <th class="border-b-2 border-white border-solid text-sm ">NAME</th>
-                                    <th class="border-b-2 border-white border-solid text-sm">SCORE</th>
+                        <div id="leaderboard" class="flex justify-between items-center">
+                            <h3 class="font-bold text-sm mb-2">Course Leaderboard</h3>
+
+                        </div>
+                        
+                        <div class="">
+                            
+                            <table class="w-full table-auto border-x border-b rounded-lg shadow-lg">
+                                <thead>
+                                  <tr>
+                                    <th class="font-bold p-2 border-b border-l">Rank</th>
+                                    <th class="font-bold p-2 border-b border-l text-left" >Name</th>
+                                    <th class="font-bold py-2 px-4 border-b border-l text-left">Score</th>
                                   </tr>
                                 </thead>
                                 <tbody>
-                                  <tr>
-                                    <td>1</td>
-                                    <td>Student 1</td>
+                                  <tr class="odd:bg-gray-100 hover:!bg-stone-200">
+                                    <td class="p-2 border-b border-l text-left">1</td>
+                                    <td class="p-2 border-b border-l text-left">Malcolm Lockyer</td>
+                                    <td class="py-2 px-4 border-b border-l text-left">1961</td>
                                   </tr>
-
-                                  <tr>
-                                    <td>2</td>
-                                    <td>Student 2</td>
-                                    <td>1972</td>
+                                  <tr class="odd:bg-gray-100 hover:!bg-stone-200">
+                                    <td class="p-2 border-b border-l text-left">2</td>
+                                    <td class="p-2 border-b border-l text-left">Student 3</td>
+                                    <td class="py-2 px-4 border-b border-l text-left">1972</td>
                                   </tr>
-
-                                  <tr>
-                                    <td>3</td>
-                                    <td>Student 3</td>
-                                    <td>1675</td>
+                                  <tr class="odd:bg-gray-100 hover:!bg-stone-200">
+                                    <td class="p-2 border-b border-l text-left">3</td>
+                                    <td class="p-2 border-b border-l text-left">Student 2</td>
+                                    <td class="py-2 px-4 border-b border-l text-left">1975</td>
                                   </tr>
                                 </tbody>
                               </table>
@@ -245,8 +254,21 @@
                         
                     </div>
 
+                </div>
 
+                <div id="graphArea" class="h-64 w-full p-4">
+                    <div id="hours" class="flex justify-between items-left">
+                        <h3 class="font-bold text-sm mb-2">Hours Spent Daily</h3>
 
+                    </div>
+
+                    <div id="timeGraph" class="flex items-center justify-center w-full">
+                        <div id="chart" class="relative h-64 w-2/3">
+                            <canvas id="myChart">
+                    
+                            </canvas>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -272,7 +294,7 @@
                         <p id="student description" class="text-xs font-thin">College Student</p>
                     </div>
                 </div>
-            </div>
+
 
 
         </div>
@@ -288,6 +310,7 @@
 
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
 </body>
 
